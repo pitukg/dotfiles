@@ -1,14 +1,3 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2019 Jan 26
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
 " When started as "evim", evim.vim will already have done these settings, bail
 " out.
 if v:progname =~? "evim"
@@ -27,11 +16,26 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Color scheme
+Plugin 'joshdick/onedark.vim'
+
+" Airline status bar
+Plugin 'vim-airline/vim-airline'
+
+" Better language syntax support
+Plugin 'sheerun/vim-polyglot'
+
+" Comment stuff out
+Plugin 'tpope/vim-commentary'
+
 " plugin for LaTeX live preview editing
 " Plugin 'xuhdev/vim-latex-live-preview'
 
 " plugin for LaTeX support
 Plugin 'vim-latex/vim-latex'
+
+" plugin for file tree
+Plugin 'preservim/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -80,3 +84,27 @@ endif
 " Syntax highlighting
 filetype plugin indent on
 syntax on
+
+" Color scheme
+colorscheme onedark
+let g:airline_theme='onedark'
+let g:airline_powerline_fonts = 1
+
+" Line numbering
+set relativenumber
+set cursorline
+
+" Clear search on double Esc
+map <silent> <Esc><Esc> :noh<CR>
+
+" Comment toggle
+map <silent> <C-_> :Commentary<CR>
+imap <silent> <C-_> <Esc>:Commentary<CR>
+
+" Cursor shapes
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+set mouse=a
+
