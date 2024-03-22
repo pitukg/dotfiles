@@ -1,0 +1,26 @@
+# Remap arrow keys to match beginning-of-line to cursor
+"\033[A": history-search-backward
+"\033[B": history-search-forward
+
+# Prepend * to modified lines in history buffer
+set mark-modified-lines on
+
+# Show beginning-of-line to cursor in different colour from cursor to end-of-line
+set enable-active-region on
+set active-region-start-color "\e[0;7m"
+set active-region-end-color "\e[0m"
+
+# No need to press TAB twice
+set show-all-if-unmodified on
+
+# Makes file completion TAB display only prefix in color
+# set colored-completion-prefix
+# Denote eg symlinks by @ symbol etc
+# set visible-stats on
+set colored-stats on
+set mark-symlinked-directories on
+# set menu-complete-display-prefix on
+
+# Do not show Ctrl-C / Ctrl-D
+set echo-control-characters off
+
