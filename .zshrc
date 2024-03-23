@@ -75,6 +75,25 @@ bindkey -s '^[[F' '^[[1;2F^E'
 # Use fzf for fuzzy backward history search (Ctrl+R under -e keybindings, ** globs, etc.)
 eval "$(fzf --zsh)"
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/gabor/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/gabor/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/gabor/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/gabor/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/gabor/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/home/gabor/miniforge3/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
 # Dotfiles git config
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
@@ -90,4 +109,5 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # fish-like syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 

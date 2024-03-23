@@ -1,0 +1,11 @@
+# Only enable conda-forge channel and not anaconda defaults
+channels:
+  - conda-forge
+  - nodefaults
+
+# Do not activate base environment on conda init not to break system python packages
+auto_activate_base: false
+
+# Show channel URLs in `conda list' and package download preview
+show_channel_urls: true
+
