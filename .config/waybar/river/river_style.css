@@ -1,8 +1,9 @@
 * {
 	border: none;
 	border-radius: 10;
-    font-family: "Font Awesome 6 Pro" ;
-	font-size: 15px;
+	/* font-family: "Font Awesome 6 Pro" ; */
+	font-family: "MesloLGS NF";
+	font-size: 14px;
 	min-height: 10px;
 }
 
@@ -20,7 +21,7 @@ window#waybar.hidden {
 	padding-right: 10px;
 	border-radius: 10px;
 	transition: none;
-    color: transparent;
+	color: transparent;
 	background: transparent;
 }
 #tags {
@@ -142,8 +143,7 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 	color: #161320;
-	background: #ABE9B3;
-	/*background: #1A1826;*/
+	background: #ABB2BF;
 }
 
 #memory {
@@ -155,7 +155,7 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 	color: #161320;
-	background: #DDB6F2;
+	background: #61AFEF;
 }
 #cpu {
 	margin-top: 6px;
@@ -166,7 +166,7 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 	color: #161320;
-	background: #96CDFB;
+	background: #ABB2BF;
 }
 
 #tray {
