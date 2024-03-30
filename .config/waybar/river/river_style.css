@@ -193,6 +193,20 @@ window#waybar.hidden {
 	background: transparent;
 }
 
+#custom-power {
+	font-size: 20px;
+	margin-top: 6px;
+	margin-left: 8px;
+	margin-right: 8px;
+	padding-left: 10px;
+	padding-right: 5px;
+	margin-bottom: 0px;
+	border-radius: 10px;
+	transition: none;
+	color: #89DCEB;
+	background: transparent;
+}
+
 #custom-wallpaper {
 	margin-top: 6px;
 	margin-left: 8px;
