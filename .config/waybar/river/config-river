@@ -4,7 +4,7 @@
 	"layer": "top",
 	"modules-left": ["custom/launcher","cpu","memory","tray"],
 	"modules-center": ["hyprland/workspaces", "river/tags"],
-	"modules-right": ["network","pulseaudio","clock","custom/power"],
+	"modules-right": ["network","custom/citvpn","pulseaudio","clock","custom/power"],
 
 	"pulseaudio": {
 		"tooltip": false,
@@ -76,6 +76,14 @@
 			"interval": 30,
 			"format": " {}%",
 			"max-length": 10
+	},
+	"custom/citvpn": {
+		"format": "󰖂 VPN 󰟾",
+		"on-click": "~/build/svpn-login/connect.sh `wl-paste` >>/tmp/svpn-login.log 2>&1",
+		"on-click-right": "kill -TERM -- -`pgrep -f svpn-login/connect.sh`",
+		"return-type": "json",
+		"exec": "(ip link show tun0 >>/dev/null 2>&1 && echo '{\"class\": \"connected\"}') || echo '{}'",
+		"interval": 5
 	},
 	"custom/media": {
 			"interval": 30,
