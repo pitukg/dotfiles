@@ -3,7 +3,7 @@
 {
 	"layer": "top",
 	"modules-left": ["custom/launcher","cpu","memory","tray"],
-	"modules-center": ["hyprland/workspaces", "river/tags"],
+	"modules-center": ["hyprland/workspaces"],
 	"modules-right": ["network","custom/citvpn","pulseaudio","clock","custom/power"],
 
 	"pulseaudio": {
