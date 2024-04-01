@@ -2,8 +2,8 @@
 // Modified to fit own set up
 {
 	"layer": "top",
-	"modules-left": ["custom/launcher","cpu","memory","tray"],
-	"modules-center": ["hyprland/workspaces"],
+	"modules-left": ["custom/launcher","cpu","memory","hyprland/workspaces","tray"],
+	"modules-center": ["hyprland/window"],
 	"modules-right": ["network","custom/citvpn","pulseaudio","clock","custom/power"],
 
 	"pulseaudio": {
@@ -22,23 +22,42 @@
 		"format-ethernet": ""
 	},
 	"hyprland/workspaces": {
-		"format": "{icon}",
+		"format": "{icon}: {windows}",
+		"format-window-separator": " ",
 		"on-click": "activate",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
 		"format-icons": {
-			"1": "",
-			"2": "",
-			"3": "",
-			"4": "",
-			"5": "",
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
 			"urgent": "",
 			"active": "",
 			"default": ""
+		},
+		"window-rewrite": {
+			"class<kitty>": "",
+			"title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+			"class<firefox>": "", // Windows whose classes are "firefox"
+			"class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+			"foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+			"code": "󰨞"
 		},
 		"sort-by-number": true
 	},
 	"tray":{
 		"icon-size":18,
 		"spacing": 10
+	},
+	"hyprland/window": {
+		"format": "{}",
+		"rewrite": {
+			"(.*) — Mozilla Firefox": "󰈹  $1",
+		},
+		"max-length": 200,
+		"separate-outputs": true
 	},
 	"clock": {
 		"format": " {:%H:%M  %d/%m/%Y}",
@@ -77,7 +96,7 @@
 	},
 	"custom/launcher":{
 			"format": " ",
-			"on-click": "rofi -show drun",
+			"on-click": "rofi -show combi -combi-modes window,drun -sort -sorting-method fzf",
 			"on-click-right": "killall rofi"
 	},
 	"custom/power":{
