@@ -66,11 +66,12 @@ bindkey '^H' backward-delete-word
 bindkey '^[[H' beginning-of-line
 
 # History search keybindings
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
-# END as well
 bindkey '^[[1;2F' autosuggest-accept
+# Accept with END
 bindkey -s '^[[F' '^[[1;2F^E'
+bindkey '^[[A' history-search-backward
+# bindkey -s '^[[A' '^[[1;2F'
+bindkey '^[[B' history-search-forward
 
 # Use fzf for fuzzy backward history search (Ctrl+R under -e keybindings, ** globs, etc.)
 eval "$(fzf --zsh)"
