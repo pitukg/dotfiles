@@ -43,6 +43,8 @@ call vundle#begin()
   " plugin for LaTeX support
   Plugin 'vim-latex/vim-latex'
   let g:tex_flavor='latex'
+  let g:Tex_DefaultTargetFormat='pdf'
+  let g:Tex_ViewRul_pdf='xdg-open'
 
   " syntax highlighting for kitty terminal emulator config
   Plugin 'fladson/vim-kitty'
