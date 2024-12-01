@@ -95,6 +95,11 @@ if [ -f "/home/gabor/miniforge3/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 
+# LaTeX support
+PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
+MANPATH="/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH"
+INFOPATH="/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH"
+
 # Dotfiles git config
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
@@ -110,5 +115,4 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # fish-like syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 
