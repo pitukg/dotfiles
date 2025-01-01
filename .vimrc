@@ -107,6 +107,8 @@ set listchars=tab:>-
 " Color scheme
 colorscheme onedark
 let g:airline_theme='onedark'
+hi Comment ctermfg=36
+hi Folded ctermfg=30
 
 " Cursor shapes
 let &t_SI = "\e[6 q"
